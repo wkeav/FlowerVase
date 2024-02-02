@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Flowers :D" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<title>Flower Vase </title>
+<style>
+    .overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .alert-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1001;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .error-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            font-size: 3em;
+            text-align: center;
+            padding-top: 30vh;
+            z-index: 1000;
+        }
+    .fireworks-container {
+        display: none;
+    }
+</style>
+    <div class="overlay" id="overlay" style="display:none;">
+    <div class="alert-box">
+        <span class="close-btn" onclick="closeAlert()">X</span>
+        <p></p>
+    </div>
+</div>
+
+<div class="error-overlay" id="errorOverlay">
+    ERROR! 
+</div>
+//flowers
+<body>
+    <h1 class="header"> Be My Valentine Or Do a BackFlip?</h1>
+    <label for="userInput"></label>
+    <button onclick="handleInput ('Backflip')" class="userInput">BACKFLIP</button>
+    <button onclick="handleInput ('Yes')" class="userInput1" id="yesButton">Yes hihi</button>
+<div class="flower">
+    <div class="f-wrapper">
+        <div class="flower__line"></div>
+        <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+        </div>
+    </div>
+
+    <div class="f-wrapper f-wrapper--2">
+        <div class="flower__line"></div>
+        <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+        </div>
+    </div>
+
+    <div class="f-wrapper f-wrapper--3">
+        <div class="flower__line"></div>
+        <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+        </div>
+    </div>
+    <div class="flower__glass"></div>
+</div>
+
+//fireworks
+
+<div class="fireworks-container" id="fireworks-container">
+    <div id="tsparticles"></div>
+</div>
+
+
+<div id="tsparticles"></div>
+<script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+        c[a] =
+            c[a] ||
+            function () {
+                (c[a].q = c[a].q || []).push(arguments);
+            };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+    })
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-fireworks@3.0.2/tsparticles.preset.fireworks.bundle.min.js"></script>
+<script type="text/javascript">
+    (async () => {
+        await tsParticles.load({ id: "tsparticles", options: { preset: "fireworks" } });
+    })();
+
+        function handleInput(choice) {
+            if (choice === 'Backflip') {
+                document.getElementById('errorOverlay').style.display = 'block';
+                document.body.style.overflow = 'hidden'; 
+            } else if (choice === 'Yes') {
+                document.getElementById('fireworks-container').style.display = 'block';
+                startConfetti();
+            }
+            console.log("User chose: " + choice);
+        }
+
+  
+</script>
+    
+<script>
+     document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('overlay').style.display = 'flex';
+        });
+
+        function closeAlert() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+</script>
+</body> 
+</html>
+
+
