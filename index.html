@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <title>Flower Vase </title>
+    //styling the flowers
 <style>
     .overlay {
         display: flex;
@@ -67,12 +68,13 @@
 <div class="error-overlay" id="errorOverlay">
     ERROR! 
 </div>
+    
 //flowers
 <body>
-    <h1 class="header"> Be My Valentine Or Do a BackFlip?</h1>
+    <h1 class="header"> Do a BackFlip?</h1>
     <label for="userInput"></label>
     <button onclick="handleInput ('Backflip')" class="userInput">BACKFLIP</button>
-    <button onclick="handleInput ('Yes')" class="userInput1" id="yesButton">Yes hihi</button>
+    <button onclick="handleInput ('Yes')" class="userInput1" id="yesButton">No</button>
 <div class="flower">
     <div class="f-wrapper">
         <div class="flower__line"></div>
@@ -101,7 +103,7 @@
             <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
         </div>
     </div>
-
+//flower leaf
     <div class="f-wrapper f-wrapper--3">
         <div class="flower__line"></div>
         <div class="f">
@@ -115,17 +117,20 @@
             <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
         </div>
     </div>
+
+    
     <div class="flower__glass"></div>
 </div>
 
+    
 //fireworks
-
 <div class="fireworks-container" id="fireworks-container">
     <div id="tsparticles"></div>
 </div>
 
-
 <div id="tsparticles"></div>
+
+//firework jvs 
 <script type="text/javascript">
     (function (c, l, a, r, i, t, y) {
         c[a] =
@@ -139,8 +144,8 @@
         y = l.getElementsByTagName(r)[0];
         y.parentNode.insertBefore(t, y);
     })
-
 </script>
+    
 <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-fireworks@3.0.2/tsparticles.preset.fireworks.bundle.min.js"></script>
 <script type="text/javascript">
     (async () => {
@@ -156,11 +161,10 @@
                 startConfetti();
             }
             console.log("User chose: " + choice);
-        }
-
-  
+        }  
 </script>
-    
+
+    //allowing user to choose options, and it shows without overlapping another 
 <script>
      document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('overlay').style.display = 'flex';
